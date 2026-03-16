@@ -1,0 +1,164 @@
+<!--
+  Screen: S-03 DM Chat
+  CJX Stage: Usage
+  FR Mapping: FR-05, FR-06, FR-07, FR-08, FR-09, FR-14, FR-15, FR-19
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-03 DM Chat</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body class="cjx-usage">
+  <div class="mobile-frame">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="status-bar-right">
+        <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="#1A1A1A"/><rect x="4" y="2" width="3" height="10" rx="1" fill="#1A1A1A"/><rect x="8" y="0" width="3" height="12" rx="1" fill="#1A1A1A"/><rect x="12" y="0" width="3" height="12" rx="1" fill="#1A1A1A"/></svg>
+        <svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2C5.5 2 3.2 3 1.5 4.7L0 3.2C2.1 1.2 4.9 0 8 0s5.9 1.2 8 3.2l-1.5 1.5C12.8 3 10.5 2 8 2z" fill="#1A1A1A"/><path d="M8 6C6.4 6 4.9 6.6 3.8 7.7L2.3 6.2C3.8 4.8 5.8 4 8 4s4.2.8 5.7 2.2l-1.5 1.5C11.1 6.6 9.6 6 8 6z" fill="#1A1A1A"/><circle cx="8" cy="10" r="2" fill="#1A1A1A"/></svg>
+        <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="#1A1A1A" stroke-width="1" fill="none"/><rect x="22" y="4" width="2" height="4" rx="1" fill="#1A1A1A"/><rect x="1.5" y="2.5" width="16" height="7" rx="1" fill="#1A1A1A"/></svg>
+      </div>
+    </div>
+
+    <div class="app-layout">
+      <nav class="sidebar hide-mobile"></nav>
+
+      <!-- Chat Header (56px) -->
+      <div class="screen-header">
+        <button class="header-back" onclick="window.location.href='s02-conversation-list.html'">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="avatar avatar-sm avatar-blue" style="position: relative;">
+          A1
+          <span class="bot-badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="3" r="2" fill="white"/><rect x="2" y="5" width="6" height="3" rx="1" fill="white"/></svg></span>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          <div style="display: flex; align-items: center; gap: var(--space-xs);">
+            <span class="text-h3" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Agent-1</span>
+            <span class="agent-icon"><svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="5" r="3" fill="currentColor"/><rect x="3" y="9" width="10" height="5" rx="2" fill="currentColor"/></svg></span>
+          </div>
+          <span class="presence-text online"><span class="dot"></span> Online</span>
+        </div>
+        <button class="header-action" onclick="window.location.href='s08-conversation-info.html'">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        </button>
+      </div>
+
+      <!-- Messages List -->
+      <main class="main-content" data-cjx-entrance style="display: flex; flex-direction: column; padding-bottom: var(--space-sm);">
+
+        <!-- Date separator -->
+        <div class="date-separator">
+          <span class="date-separator-line"></span>
+          <span class="date-separator-text">Today</span>
+          <span class="date-separator-line"></span>
+        </div>
+
+        <!-- User message -->
+        <div class="message-row user">
+          <div>
+            <div class="message-bubble-user">
+              Can you analyze the latest test results and provide a summary?
+            </div>
+            <div class="message-meta">
+              <span class="text-caption color-secondary">12:30 PM</span>
+              <span class="message-reaction">&#9825;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent message with markdown -->
+        <div class="message-row agent">
+          <div class="avatar avatar-sm avatar-blue" style="position: relative; align-self: flex-start; margin-top: 4px;">
+            A1
+            <span class="bot-badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="3" r="2" fill="white"/><rect x="2" y="5" width="6" height="3" rx="1" fill="white"/></svg></span>
+          </div>
+          <div>
+            <div class="message-sender">Agent-1</div>
+            <div class="message-bubble-agent">
+              <p>Here's the analysis with <strong>markdown</strong>:</p>
+
+              <div class="code-block" style="margin: var(--space-sm) 0;">
+                <div class="code-block-header">
+                  <span>python</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <div class="code-block-body">
+                  <code class="text-code" style="color: var(--color-code-text);">
+<span style="color: #569CD6;">def</span> <span style="color: #DCDCAA;">analyze_results</span>(data):
+    <span style="color: #CE9178;">"""Process test results."""</span>
+    passed = <span style="color: #B5CEA8;">0</span>
+    <span style="color: #C586C0;">for</span> test <span style="color: #C586C0;">in</span> data:
+        <span style="color: #C586C0;">if</span> test.status == <span style="color: #CE9178;">"pass"</span>:
+            passed += <span style="color: #B5CEA8;">1</span>
+    <span style="color: #C586C0;">return</span> passed / <span style="color: #DCDCAA;">len</span>(data)
+                  </code>
+                </div>
+              </div>
+
+              <p>And the results summary:</p>
+
+              <table class="msg-table">
+                <thead>
+                  <tr><th>Suite</th><th>Passed</th><th>Failed</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Auth</td><td>12</td><td>0</td></tr>
+                  <tr><td>Chat</td><td>28</td><td>2</td></tr>
+                  <tr><td>API</td><td>15</td><td>1</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="message-meta">
+              <span class="text-caption color-secondary">12:31 PM</span>
+              <span class="message-reaction">&#9825;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- User message -->
+        <div class="message-row user">
+          <div>
+            <div class="message-bubble-user">
+              Great, can you fix the failing tests?
+            </div>
+            <div class="message-meta">
+              <span class="text-caption color-secondary">12:45 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent typing indicator -->
+        <div class="typing-indicator">
+          <div class="avatar avatar-sm avatar-blue" style="position: relative;">
+            A1
+            <span class="bot-badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="3" r="2" fill="white"/><rect x="2" y="5" width="6" height="3" rx="1" fill="white"/></svg></span>
+          </div>
+          <div class="typing-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Input Bar -->
+      <div class="input-bar">
+        <button class="input-bar-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+        </button>
+        <textarea class="input-field" rows="1" placeholder="Type a message..."></textarea>
+        <button class="input-bar-btn send-btn send-disabled">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="interactions.js"></script>
+</body>
+</html>

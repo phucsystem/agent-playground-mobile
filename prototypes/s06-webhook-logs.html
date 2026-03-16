@@ -1,0 +1,178 @@
+<!--
+  Screen: S-06 Admin Webhook Logs
+  CJX Stage: Discovery
+  FR Mapping: FR-22
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-06 Webhook Logs</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body class="cjx-discovery">
+  <div class="mobile-frame">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="status-bar-right">
+        <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="#1A1A1A"/><rect x="4" y="2" width="3" height="10" rx="1" fill="#1A1A1A"/><rect x="8" y="0" width="3" height="12" rx="1" fill="#1A1A1A"/><rect x="12" y="0" width="3" height="12" rx="1" fill="#1A1A1A"/></svg>
+        <svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2C5.5 2 3.2 3 1.5 4.7L0 3.2C2.1 1.2 4.9 0 8 0s5.9 1.2 8 3.2l-1.5 1.5C12.8 3 10.5 2 8 2z" fill="#1A1A1A"/><path d="M8 6C6.4 6 4.9 6.6 3.8 7.7L2.3 6.2C3.8 4.8 5.8 4 8 4s4.2.8 5.7 2.2l-1.5 1.5C11.1 6.6 9.6 6 8 6z" fill="#1A1A1A"/><circle cx="8" cy="10" r="2" fill="#1A1A1A"/></svg>
+        <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="#1A1A1A" stroke-width="1" fill="none"/><rect x="22" y="4" width="2" height="4" rx="1" fill="#1A1A1A"/><rect x="1.5" y="2.5" width="16" height="7" rx="1" fill="#1A1A1A"/></svg>
+      </div>
+    </div>
+
+    <div class="app-layout">
+      <nav class="sidebar hide-mobile"></nav>
+
+      <!-- Header -->
+      <div class="screen-header">
+        <button class="header-back" onclick="window.location.href='s05-admin-users.html'">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span class="text-h3" style="flex: 1;">Webhook Logs</span>
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="filter-bar">
+        <button class="filter-chip active">All
+          <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 3l3 4 3-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <button class="filter-chip">Delivered
+          <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 3l3 4 3-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <button class="filter-chip">Last 24h
+          <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 3l3 4 3-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+      </div>
+
+      <main class="main-content" data-cjx-entrance>
+
+        <!-- Log List -->
+        <div>
+          <!-- Delivered log -->
+          <div class="log-item">
+            <div class="log-top-row">
+              <div class="avatar" style="width: 24px; height: 24px; font-size: 10px; background: var(--color-agent-badge); color: white;">A1</div>
+              <span class="log-agent-name">Agent-1</span>
+              <span class="status-badge delivered"><span class="status-dot"></span> Delivered</span>
+              <span class="log-latency">142ms</span>
+            </div>
+            <div class="log-bottom-row">
+              <span class="log-preview">"User asked about test results..."</span>
+              <span class="log-time">Mar 17, 3:45p</span>
+            </div>
+          </div>
+          <div class="conversation-separator" style="margin-left: 0;"></div>
+
+          <!-- Failed log -->
+          <div class="log-item">
+            <div class="log-top-row">
+              <div class="avatar" style="width: 24px; height: 24px; font-size: 10px; background: #14B8A6; color: white;">A2</div>
+              <span class="log-agent-name">Agent-2</span>
+              <span class="status-badge failed"><span class="status-dot"></span> Failed</span>
+              <span class="log-latency">30000ms</span>
+            </div>
+            <div class="log-bottom-row">
+              <span class="log-preview">"Can you deploy the staging env..."</span>
+              <span class="log-time">Mar 17, 3:20p</span>
+            </div>
+          </div>
+          <div class="conversation-separator" style="margin-left: 0;"></div>
+
+          <!-- Delivered log -->
+          <div class="log-item">
+            <div class="log-top-row">
+              <div class="avatar" style="width: 24px; height: 24px; font-size: 10px; background: var(--color-agent-badge); color: white;">A1</div>
+              <span class="log-agent-name">Agent-1</span>
+              <span class="status-badge delivered"><span class="status-dot"></span> Delivered</span>
+              <span class="log-latency">89ms</span>
+            </div>
+            <div class="log-bottom-row">
+              <span class="log-preview">"Please analyze the error logs from..."</span>
+              <span class="log-time">Mar 17, 2:55p</span>
+            </div>
+          </div>
+          <div class="conversation-separator" style="margin-left: 0;"></div>
+
+          <!-- Pending log -->
+          <div class="log-item">
+            <div class="log-top-row">
+              <div class="avatar" style="width: 24px; height: 24px; font-size: 10px; background: var(--color-agent-badge); color: white;">A1</div>
+              <span class="log-agent-name">Agent-1</span>
+              <span class="status-badge pending"><span class="status-dot"></span> Pending</span>
+              <span class="log-latency">--</span>
+            </div>
+            <div class="log-bottom-row">
+              <span class="log-preview">"@Agent-1 summarize the group disc..."</span>
+              <span class="log-time">Mar 17, 2:33p</span>
+            </div>
+          </div>
+          <div class="conversation-separator" style="margin-left: 0;"></div>
+
+          <!-- Delivered log -->
+          <div class="log-item">
+            <div class="log-top-row">
+              <div class="avatar" style="width: 24px; height: 24px; font-size: 10px; background: #14B8A6; color: white;">A2</div>
+              <span class="log-agent-name">Agent-2</span>
+              <span class="status-badge delivered"><span class="status-dot"></span> Delivered</span>
+              <span class="log-latency">215ms</span>
+            </div>
+            <div class="log-bottom-row">
+              <span class="log-preview">"Generate a report for the sprint..."</span>
+              <span class="log-time">Mar 17, 1:10p</span>
+            </div>
+          </div>
+          <div class="conversation-separator" style="margin-left: 0;"></div>
+
+          <!-- Delivered log -->
+          <div class="log-item">
+            <div class="log-top-row">
+              <div class="avatar" style="width: 24px; height: 24px; font-size: 10px; background: var(--color-agent-badge); color: white;">A1</div>
+              <span class="log-agent-name">Agent-1</span>
+              <span class="status-badge delivered"><span class="status-dot"></span> Delivered</span>
+              <span class="log-latency">167ms</span>
+            </div>
+            <div class="log-bottom-row">
+              <span class="log-preview">"What's the current DB connection p..."</span>
+              <span class="log-time">Mar 17, 11:30a</span>
+            </div>
+          </div>
+          <div class="conversation-separator" style="margin-left: 0;"></div>
+
+          <!-- Failed log -->
+          <div class="log-item">
+            <div class="log-top-row">
+              <div class="avatar" style="width: 24px; height: 24px; font-size: 10px; background: #14B8A6; color: white;">A2</div>
+              <span class="log-agent-name">Agent-2</span>
+              <span class="status-badge failed"><span class="status-dot"></span> Failed</span>
+              <span class="log-latency">5023ms</span>
+            </div>
+            <div class="log-bottom-row">
+              <span class="log-preview">"Run the integration tests on..."</span>
+              <span class="log-time">Mar 16, 4:50p</span>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- Bottom Tab Bar -->
+      <div class="tab-bar">
+        <button class="tab-item" onclick="window.location.href='s02-conversation-list.html'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="tab-label">Chats</span>
+        </button>
+        <button class="tab-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span class="tab-label">Admin</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="interactions.js"></script>
+</body>
+</html>

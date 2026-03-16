@@ -1,0 +1,12 @@
+export const PAGE_SIZE = 30;
+export const TYPING_DEBOUNCE_MS = 3000;
+export const TYPING_TIMEOUT_MS = 3000;
+export const AGENT_THINKING_TIMEOUT_MS = 30000;
+export const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
+export const IMAGE_COMPRESS_THRESHOLD_BYTES = 2 * 1024 * 1024;
+export const IMAGE_MAX_DIMENSION = 1920;
+export const IMAGE_QUALITY = 0.8;
+export const MAX_INPUT_LINES = 4;
+export const SIGNED_URL_CACHE_MINUTES = 50;
+export const SESSION_TTL_HOURS = 24;
+export const MENTION_MAX_VISIBLE = 4;

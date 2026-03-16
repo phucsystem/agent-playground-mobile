@@ -1,0 +1,175 @@
+<!--
+  Screen: S-05 Admin Users
+  CJX Stage: Discovery
+  FR Mapping: FR-20, FR-21
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-05 Admin Users</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body class="cjx-discovery">
+  <div class="mobile-frame">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="status-bar-right">
+        <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="#1A1A1A"/><rect x="4" y="2" width="3" height="10" rx="1" fill="#1A1A1A"/><rect x="8" y="0" width="3" height="12" rx="1" fill="#1A1A1A"/><rect x="12" y="0" width="3" height="12" rx="1" fill="#1A1A1A"/></svg>
+        <svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2C5.5 2 3.2 3 1.5 4.7L0 3.2C2.1 1.2 4.9 0 8 0s5.9 1.2 8 3.2l-1.5 1.5C12.8 3 10.5 2 8 2z" fill="#1A1A1A"/><path d="M8 6C6.4 6 4.9 6.6 3.8 7.7L2.3 6.2C3.8 4.8 5.8 4 8 4s4.2.8 5.7 2.2l-1.5 1.5C11.1 6.6 9.6 6 8 6z" fill="#1A1A1A"/><circle cx="8" cy="10" r="2" fill="#1A1A1A"/></svg>
+        <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="#1A1A1A" stroke-width="1" fill="none"/><rect x="22" y="4" width="2" height="4" rx="1" fill="#1A1A1A"/><rect x="1.5" y="2.5" width="16" height="7" rx="1" fill="#1A1A1A"/></svg>
+      </div>
+    </div>
+
+    <div class="app-layout">
+      <nav class="sidebar hide-mobile"></nav>
+
+      <!-- Header -->
+      <div class="screen-header">
+        <button class="header-back" onclick="window.location.href='s02-conversation-list.html'">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span class="text-h3" style="flex: 1;">Users</span>
+        <button class="header-action" style="background: var(--color-primary); border-radius: var(--radius-sm); width: auto; height: auto; padding: var(--space-xs) var(--space-md); color: white; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input class="search-input" type="text" placeholder="Search users...">
+        </div>
+      </div>
+
+      <main class="main-content" data-cjx-entrance>
+
+        <!-- User List -->
+        <div>
+          <!-- Admin user -->
+          <div class="user-item">
+            <div class="avatar avatar-purple" style="position: relative;">
+              PH
+              <span class="presence-dot"></span>
+            </div>
+            <div class="user-info">
+              <div class="user-name">phuc</div>
+              <div class="user-email">phuc@example.com</div>
+            </div>
+            <span class="role-badge admin">Admin</span>
+          </div>
+
+          <!-- Agent user -->
+          <div class="user-item">
+            <div class="avatar avatar-blue" style="position: relative;">
+              A1
+              <span class="bot-badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="3" r="2" fill="white"/><rect x="2" y="5" width="6" height="3" rx="1" fill="white"/></svg></span>
+              <span class="presence-dot"></span>
+            </div>
+            <div class="user-info">
+              <div class="user-name">Agent-1</div>
+              <div class="user-email">webhook: active</div>
+            </div>
+            <span class="role-badge agent">Agent</span>
+          </div>
+
+          <!-- Regular user -->
+          <div class="user-item">
+            <div class="avatar avatar-green" style="position: relative;">
+              AL
+              <span class="presence-dot"></span>
+            </div>
+            <div class="user-info">
+              <div class="user-name">alice</div>
+              <div class="user-email">alice@example.com</div>
+            </div>
+            <span class="role-badge user-role">User</span>
+          </div>
+
+          <!-- Regular user (offline) -->
+          <div class="user-item">
+            <div class="avatar avatar-red">
+              BO
+            </div>
+            <div class="user-info">
+              <div class="user-name">bob</div>
+              <div class="user-email">bob@example.com</div>
+            </div>
+            <span class="role-badge user-role">User</span>
+          </div>
+
+          <!-- Agent (offline) -->
+          <div class="user-item">
+            <div class="avatar avatar-teal" style="position: relative;">
+              A2
+              <span class="bot-badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="3" r="2" fill="white"/><rect x="2" y="5" width="6" height="3" rx="1" fill="white"/></svg></span>
+            </div>
+            <div class="user-info">
+              <div class="user-name">Agent-2</div>
+              <div class="user-email">webhook: inactive</div>
+            </div>
+            <span class="role-badge agent">Agent</span>
+          </div>
+
+          <!-- Regular user -->
+          <div class="user-item">
+            <div class="avatar avatar-pink">
+              CA
+            </div>
+            <div class="user-info">
+              <div class="user-name">carol</div>
+              <div class="user-email">carol@example.com</div>
+            </div>
+            <span class="role-badge user-role">User</span>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Bottom Tab Bar -->
+      <div class="tab-bar">
+        <button class="tab-item" onclick="window.location.href='s02-conversation-list.html'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="tab-label">Chats</span>
+        </button>
+        <button class="tab-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span class="tab-label">Admin</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Create User Modal (overlay demo) -->
+    <!-- Uncomment to see modal state:
+    <div class="modal-overlay">
+      <div class="modal-sheet">
+        <div class="modal-handle"></div>
+        <h2 class="text-h2" style="margin-bottom: var(--space-lg);">Create User</h2>
+        <div class="form-field">
+          <label class="form-label">Username</label>
+          <input class="form-input" type="text" placeholder="Enter username">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Email (optional)</label>
+          <input class="form-input" type="email" placeholder="user@example.com">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Role</label>
+          <div class="segmented-control">
+            <button class="segment-btn">Admin</button>
+            <button class="segment-btn active">User</button>
+            <button class="segment-btn">Agent</button>
+          </div>
+        </div>
+        <button class="btn-primary">Create</button>
+      </div>
+    </div>
+    -->
+  </div>
+  <script src="interactions.js"></script>
+</body>
+</html>

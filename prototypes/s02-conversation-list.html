@@ -1,0 +1,167 @@
+<!--
+  Screen: S-02 Conversation List
+  CJX Stage: Usage / Retention
+  FR Mapping: FR-03, FR-04, FR-16, FR-17
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-02 Conversation List</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body class="cjx-usage">
+  <div class="mobile-frame">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="status-bar-right">
+        <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="#1A1A1A"/><rect x="4" y="2" width="3" height="10" rx="1" fill="#1A1A1A"/><rect x="8" y="0" width="3" height="12" rx="1" fill="#1A1A1A"/><rect x="12" y="0" width="3" height="12" rx="1" fill="#1A1A1A"/></svg>
+        <svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2C5.5 2 3.2 3 1.5 4.7L0 3.2C2.1 1.2 4.9 0 8 0s5.9 1.2 8 3.2l-1.5 1.5C12.8 3 10.5 2 8 2z" fill="#1A1A1A"/><path d="M8 6C6.4 6 4.9 6.6 3.8 7.7L2.3 6.2C3.8 4.8 5.8 4 8 4s4.2.8 5.7 2.2l-1.5 1.5C11.1 6.6 9.6 6 8 6z" fill="#1A1A1A"/><circle cx="8" cy="10" r="2" fill="#1A1A1A"/></svg>
+        <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="#1A1A1A" stroke-width="1" fill="none"/><rect x="22" y="4" width="2" height="4" rx="1" fill="#1A1A1A"/><rect x="1.5" y="2.5" width="16" height="7" rx="1" fill="#1A1A1A"/></svg>
+      </div>
+    </div>
+
+    <div class="app-layout">
+      <nav class="sidebar hide-mobile"></nav>
+      <main class="main-content" data-cjx-entrance>
+
+        <!-- Header: Title + User Avatar -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: var(--space-lg);">
+          <h1 class="text-h1">Chats</h1>
+          <div class="avatar avatar-sm avatar-purple">P</div>
+        </div>
+
+        <!-- Conversation List -->
+        <div>
+          <!-- Conversation 1: Agent DM (unread, online) -->
+          <div class="conversation-item" data-href="s03-dm-chat.html">
+            <div class="avatar avatar-blue" style="position: relative;">
+              A1
+              <span class="bot-badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="3" r="2" fill="white"/><rect x="2" y="5" width="6" height="3" rx="1" fill="white"/></svg></span>
+              <span class="presence-dot"></span>
+            </div>
+            <div class="conversation-content">
+              <div class="conversation-top-row">
+                <span class="conversation-name">Agent-1</span>
+                <span class="agent-icon"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3" fill="currentColor"/><rect x="3" y="9" width="10" height="5" rx="2" fill="currentColor"/></svg></span>
+                <span class="conversation-time">5m ago</span>
+              </div>
+              <div class="conversation-bottom-row">
+                <span class="conversation-preview">Here's the analysis you requested with the...</span>
+                <span class="unread-badge">3</span>
+              </div>
+            </div>
+          </div>
+          <div class="conversation-separator"></div>
+
+          <!-- Conversation 2: DM with human (typing) -->
+          <div class="conversation-item" data-href="s03-dm-chat.html">
+            <div class="avatar avatar-green" style="position: relative;">
+              AL
+              <span class="presence-dot"></span>
+            </div>
+            <div class="conversation-content">
+              <div class="conversation-top-row">
+                <span class="conversation-name">Alice</span>
+                <span class="conversation-time">12m ago</span>
+              </div>
+              <div class="conversation-bottom-row">
+                <span class="conversation-preview" style="color: var(--color-primary); font-style: italic;">Alice is typing...</span>
+              </div>
+            </div>
+          </div>
+          <div class="conversation-separator"></div>
+
+          <!-- Conversation 3: Group chat (unread) -->
+          <div class="conversation-item" data-href="s04-group-chat.html">
+            <div class="avatar avatar-orange" style="position: relative;">
+              QA
+            </div>
+            <div class="conversation-content">
+              <div class="conversation-top-row">
+                <span class="conversation-name">QA Testing</span>
+                <span class="conversation-time">3:45 PM</span>
+              </div>
+              <div class="conversation-bottom-row">
+                <span class="conversation-preview">Bob: Let me run the test suite again...</span>
+                <span class="unread-badge">1</span>
+              </div>
+            </div>
+          </div>
+          <div class="conversation-separator"></div>
+
+          <!-- Conversation 4: Agent DM (read, offline) -->
+          <div class="conversation-item" data-href="s03-dm-chat.html">
+            <div class="avatar avatar-teal" style="position: relative;">
+              A2
+              <span class="bot-badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="3" r="2" fill="white"/><rect x="2" y="5" width="6" height="3" rx="1" fill="white"/></svg></span>
+            </div>
+            <div class="conversation-content">
+              <div class="conversation-top-row">
+                <span class="conversation-name">Agent-2</span>
+                <span class="agent-icon"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3" fill="currentColor"/><rect x="3" y="9" width="10" height="5" rx="2" fill="currentColor"/></svg></span>
+                <span class="conversation-time">1:20 PM</span>
+              </div>
+              <div class="conversation-bottom-row">
+                <span class="conversation-preview">The deployment completed successfully.</span>
+              </div>
+            </div>
+          </div>
+          <div class="conversation-separator"></div>
+
+          <!-- Conversation 5: Group chat (read) -->
+          <div class="conversation-item" data-href="s04-group-chat.html">
+            <div class="avatar avatar-pink" style="position: relative;">
+              DE
+            </div>
+            <div class="conversation-content">
+              <div class="conversation-top-row">
+                <span class="conversation-name">Design Review</span>
+                <span class="conversation-time">Mar 16</span>
+              </div>
+              <div class="conversation-bottom-row">
+                <span class="conversation-preview">Carol: Updated the mockups, take a look</span>
+              </div>
+            </div>
+          </div>
+          <div class="conversation-separator"></div>
+
+          <!-- Conversation 6: DM (read, offline) -->
+          <div class="conversation-item" data-href="s03-dm-chat.html">
+            <div class="avatar avatar-red" style="position: relative;">
+              BO
+            </div>
+            <div class="conversation-content">
+              <div class="conversation-top-row">
+                <span class="conversation-name">Bob</span>
+                <span class="conversation-time">Mar 15</span>
+              </div>
+              <div class="conversation-bottom-row">
+                <span class="conversation-preview">Sounds good, let's sync tomorrow</span>
+              </div>
+            </div>
+          </div>
+          <div class="conversation-separator"></div>
+
+        </div>
+      </main>
+
+      <!-- Bottom Tab Bar -->
+      <div class="tab-bar">
+        <button class="tab-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="tab-label">Chats</span>
+        </button>
+        <button class="tab-item" data-href="s05-admin-users.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span class="tab-label">Admin</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="interactions.js"></script>
+</body>
+</html>
